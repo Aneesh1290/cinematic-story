@@ -17,7 +17,8 @@ app.get('/ping', (req, res) => {
 });
 
 // For any other request, send back index.html (SPA support)
-app.get('/:path*', (req, res) => {
+// Using app.use() instead of app.get() to avoid strict regex path-to-regexp errors
+app.use((req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
