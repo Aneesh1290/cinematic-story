@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: elite-cinematic-story
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18.0.0
+      - key: VITE_GEMINI_API_KEY
+        sync: false # Set this in Render dashboard
+      - key: VITE_SUPABASE_URL
+        value: https://dagbjswzrrzcpsbhunvm.supabase.co
+      - key: VITE_SUPABASE_KEY
+        value: sb_publishable_YuPWcOGrHbBxx45YUoznhw_Bm_3N6UI
