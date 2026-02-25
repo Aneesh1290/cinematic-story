@@ -17,7 +17,7 @@ app.get('/ping', (req, res) => {
 });
 
 // For any other request, send back index.html (SPA support)
-app.get('(.*)', (req, res) => {
+app.get('/:path*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
